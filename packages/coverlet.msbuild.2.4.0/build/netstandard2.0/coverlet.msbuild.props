@@ -1,0 +1,15 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <CollectCoverage Condition="$(CollectCoverage) == ''">false</CollectCoverage>
+    <CoverletOutputFormat Condition="$(CoverletOutputFormat) == ''">json</CoverletOutputFormat>
+    <CoverletOutput Condition="$(CoverletOutput) == ''">$([MSBuild]::EnsureTrailingSlash('$(MSBuildProjectDirectory)'))</CoverletOutput>
+    <Include Condition="$(Include) == ''"></Include>
+    <Exclude Condition="$(Exclude) == ''"></Exclude>
+    <ExcludeByFile Condition="$(ExcludeByFile) == ''"></ExcludeByFile>
+    <MergeWith Condition="$(MergeWith) == ''"></MergeWith>
+    <Threshold Condition="$(Threshold) == ''">0</Threshold>
+    <ThresholdType Condition="$(ThresholdType) == ''">line,branch,method</ThresholdType>
+    <IncludeDirectory Condition="$(IncludeDirectory) == ''"></IncludeDirectory>
+    <ExcludeByAttribute Condition="$(ExcludeByAttribute) == ''"></ExcludeByAttribute>
+  </PropertyGroup>
+</Project>

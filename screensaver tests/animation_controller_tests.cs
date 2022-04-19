@@ -7,7 +7,7 @@ namespace screensaver_tests
 {
     using screensaver;
     [TestClass] 
-    public class animation_controller_tests
+    public class animation_controller_tests 
     { 
         Random rnd = new Random();
         List<clr> colors = new List<clr>();

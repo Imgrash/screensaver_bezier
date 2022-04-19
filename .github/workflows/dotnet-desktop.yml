@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [ dev, master ]
+  pull_request:
+    branches: [ dev , master ]
+
+jobs:
+  Build_solution:
+    runs-on: windows-latest
+    steps:
+    
+    - name: Install dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet msbuild -p:FrameworkPathOverride="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6"
+      
+    - name: Test
+      run: dotnet test "screensaver tests\screensaver_tests.csproj" -p:FrameworkPathOverride="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6"
